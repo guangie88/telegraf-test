@@ -1,0 +1,11 @@
+---
+- name: Provision AMI
+  hosts: all
+  tasks:
+  - name: Include secrets
+    include_vars:
+      file: vars.yml
+  - name: Render Telegraf configuration
+    template:
+      src: "{{playbook_dir}}/telegraf.conf.j2"
+      dest: "{{playbook_dir}}/rendered/telegraf.conf"

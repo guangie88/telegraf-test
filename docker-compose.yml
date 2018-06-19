@@ -1,0 +1,8 @@
+version: '2'
+services:
+  telegraf:
+    container_name: telegraf
+    image: telegraf:1.7-alpine
+    restart: always
+    volumes:
+      - ./rendered/telegraf.conf:/etc/telegraf/telegraf.conf
